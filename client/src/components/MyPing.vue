@@ -1,3 +1,5 @@
+<!-- eslint-disable  -->
+
 <template>
   <div class="container">
     <button type="button" class="btn btn-primary">{{ msg }}</button>
@@ -5,19 +7,21 @@
 </template>
 
 <script>
-import axios from 'axios';
+/* eslint-disable */
+import axios from "axios";
 
 export default {
-  name: 'MyPing',
+  name: "MyPing",
   data() {
     return {
-      msg: '',
+      msg: "",
     };
   },
   methods: {
     getMessage() {
-      const path = 'http://localhost:5000/ping';
-      axios.get(path)
+      const path = "http://localhost:5000/ping";
+      axios
+        .get(path)
         .then((res) => {
           this.msg = res.data;
         })
