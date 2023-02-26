@@ -26,9 +26,7 @@
               </td>
               <td>
                 <div class="btn-group" role="group">
-                  <!-- eslint-disable-next-line max-len -->
                   <button type="button" class="btn btn-warning btn-sm">Update</button>
-                  <!-- eslint-disable-next-line max-len -->
                   <button type="button" class="btn btn-danger btn-sm">Delete</button>
                 </div>
               </td>
@@ -39,6 +37,7 @@
     </div>
   </div>
 </template>
+
 <script>
 /* eslint-disable */
 import axios from "axios";
