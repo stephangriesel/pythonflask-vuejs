@@ -5,6 +5,7 @@
         <h1>Books</h1>
         <hr />
         <br /><br />
+        <alert :message="message" v-if="showMessage"></alert>
         <button type="button" class="btn btn-success btn-sm" v-b-modal.book-modal>Add Book</button>
         <br /><br />
         <table class="table table-hover">
@@ -72,6 +73,7 @@
 <script>
 /* eslint-disable */
 import axios from "axios";
+import MyAlert from "./MyAlert.vue";
 
 export default {
   data() {
@@ -82,7 +84,12 @@ export default {
         author: "",
         read: [],
       },
+      message: "",
+      showMessage: false,
     };
+  },
+  components: {
+    alert: MyAlert,
   },
   methods: {
     getBooks() {
@@ -103,6 +110,8 @@ export default {
         .post(path, payload)
         .then(() => {
           this.getBooks();
+          this.message = "Book Added";
+          this.showMessage = true;
         })
         .catch((error) => {
           // eslint-disable-next-line
